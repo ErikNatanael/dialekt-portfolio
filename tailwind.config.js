@@ -7,7 +7,12 @@ module.exports = {
     "./src/**/*.css",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
+        urbanist: ["Urbanist", "sans-serif"],
+      },
+    },
   },
   plugins: [],
 };

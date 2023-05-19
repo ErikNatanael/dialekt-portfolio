@@ -1,4 +1,5 @@
 use leptos::*;
+use rand::{seq::SliceRandom, thread_rng};
 
 const IMAGES_ROOT: &'static str = "assets/images/";
 
@@ -9,12 +10,15 @@ pub struct Project {
 
 impl Project {
     pub fn thumbnail(&self, cx: Scope, i: usize) -> impl IntoView {
-        let img_c = "w-full mb-8 rounded";
+        let img_c = "w-full mb-1 rounded";
         let mut url = String::from(IMAGES_ROOT);
         url.push_str(self.main_image);
-        let height = ["h-2/5", "h-1/5", "h-2/5", "h-1/5", "h-3/5", "h-1/5", "h-3/5", "h-1/5", "h-1/5"][i%9];
+        let height = [
+            "h-2/5", "h-1/5", "h-2/5", "h-1/5", "h-3/5", "h-1/5", "h-3/5", "h-1/5", "h-1/5",
+        ][i % 9];
         view! { cx,
-            <div class=format!("bg-cover bg-center w-full mb-8 rounded hover:opacity-60 {height}") style={format!("background-image: url({url})")}>
+            <div class=format!("mb-8 rounded hover:opacity-60") >
+                <img class=img_c src=url loading="lazy" />
                 <h2>{self.name}</h2>
                 </div>
         }
@@ -108,8 +112,10 @@ pub fn all_projects() -> Vec<Project> {
 
 #[component]
 pub fn ProjectMasonry(cx: Scope) -> impl IntoView {
-    let container_c = "columns-3 gap-8 h-full";
-    let projects = all_projects();
+    let container_c = "grid grid-cols-3 auto-cols-max gap-3 h-full overflow-y-auto";
+    let mut projects = all_projects();
+    let mut rng = thread_rng();
+    projects.shuffle(&mut rng);
 
     view! { cx,
 
