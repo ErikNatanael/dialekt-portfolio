@@ -58,13 +58,13 @@ fn Portfolio(cx: Scope) -> impl IntoView {
         .collect();
     let particle_images: Vec<_> = graphics_images().into_iter().map(|i| i.view(cx)).collect();
     let me_images: Vec<_> = me_images().into_iter().map(|i| i.view(cx)).collect();
-    let image_container_c = "columns-2 gap-8";
+    let image_container_c = "columns-2 gap-8 mx-4 lg:mx-0";
     view! { cx,
         <div class=("w-full lg:w-2/3")>
             <h1 class="text-5xl text-center">"Video/Audio"</h1>
             {items}
             <h1 class="text-5xl text-center mb-6">"Images"</h1>
-            <p class="text-italic text-thin text-center">"The graphics engine I would use in the project."</p>
+            <p class="text-italic text-thin text-center">"Output from the graphics engine I am currently using"</p>
             <div class=image_container_c>
 
             {particle_images}
@@ -89,7 +89,7 @@ fn Header(cx: Scope) -> impl IntoView {
                 <h1 class="text-3xl font-thin">"Gustafsson"</h1>
             </div>
             <div class="px-3">
-                <h1 class="text-3xl font-thin">"Portfolio for the Dialekt open call application"</h1>
+                <h1 class="text-3xl font-thin">"Portfolio for the Nordic residency exchange open call Dialekt"</h1>
             </div>
         </div>
     }

@@ -105,17 +105,17 @@ pub fn all_portfolio_items() -> Vec<PortfolioItem> {
     //   relevance: "".to_string(),
     //   media: vec![PortfolioMedia::Embed("".to_string())] 
     // },
-    PortfolioItem { 
-      title: "Deviance - selected clips".to_string(), 
-      description: "Deviance is an audiovisual commission from Zubin Kanga set to premier 30 September. The piece consists of a piano part, a visual part and an electronic music part. It is based on EEG data taken while listening to two previous musical works. Both the original music and the brain activity data are used to compose the 60 visual events distributed over a 15 minute piece. These clips are not for dissemination.".to_string(), 
-      my_role: "Visual design and programming".to_string(), 
-      relevance: "This is the latest finished work using the visual engine I will base the proposed project on. The visuals can be generated live at 4k60.".to_string(),
-      media: vec![
-        PortfolioMedia::Embed("<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/dtvu2qQQcuI\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>".to_string()),
-        PortfolioMedia::Embed("<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/ESZgxPF-C3k\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>".to_string()),
+    // PortfolioItem { 
+    //   title: "Deviance - selected clips".to_string(), 
+    //   description: "Deviance is an audiovisual commission from Zubin Kanga set to premier 30 September. The piece consists of a piano part, a visual part and an electronic music part. It is based on EEG data taken while listening to two previous musical works. Both the original music and the brain activity data are used to compose the 60 visual events distributed over a 15 minute piece. These clips are not for dissemination.".to_string(), 
+    //   my_role: "Visual design and programming".to_string(), 
+    //   relevance: "This is the latest finished work using the visual engine I will base the proposed project on. The visuals can be generated live at 4k60.".to_string(),
+    //   media: vec![
+    //     PortfolioMedia::Embed("<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/dtvu2qQQcuI\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>".to_string()),
+    //     PortfolioMedia::Embed("<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/ESZgxPF-C3k\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>".to_string()),
         
-        ] 
-    },
+    //     ] 
+    // },
   ]
 }
 

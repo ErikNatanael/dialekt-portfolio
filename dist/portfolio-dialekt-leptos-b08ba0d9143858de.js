@@ -760,7 +760,7 @@ async function __wbg_init(input) {
     if (wasm !== undefined) return wasm;
 
     if (typeof input === 'undefined') {
-        input = new URL('portfolio-dialekt-leptos-463f0d1cccf17089_bg.wasm', import.meta.url);
+        input = new URL('portfolio-dialekt-leptos-b08ba0d9143858de_bg.wasm', import.meta.url);
     }
     const imports = __wbg_get_imports();
 
