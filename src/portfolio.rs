@@ -78,14 +78,14 @@ pub fn all_portfolio_items() -> Vec<PortfolioItem> {
       media: vec![PortfolioMedia::Sound("Glant.mp3".to_string())] 
     },
     PortfolioItem { 
-      title: "Master work - excerpt".to_string(), 
+      title: "Of weak forces".to_string(), 
       description: "For my master's degree, I investigated the metaphor of fragility as the basis for an audiovisual live performance system. This is an excerpt of a longer work.".to_string(), 
       my_role: "Instrument design, composition, sound synthesis, visual synthesis, performance".to_string(), 
       relevance: "Audiovisual live performance on my own instrument.".to_string(),
       media: vec![PortfolioMedia::Embed("<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/6i4FmrIRZeA\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>".to_string())] 
     },
     PortfolioItem { 
-      title: "ergia - excerpt".to_string(), 
+      title: "ergia".to_string(), 
       description: "ergia for solo viola and live electronics. The viola draws out whispers and evokes an organic soundscape of small digital noises. Electronic sounds and processes are triggered using machine listening.".to_string(), 
       my_role: "Performer, composition, sound design, programming".to_string(), 
       relevance: "Documentation of live performance music and tech experience.".to_string(),
@@ -126,7 +126,7 @@ pub struct Image {
 
 impl Image {
   pub fn view(&self, cx: Scope) -> impl IntoView {
-    let mut url = String::from("/assets/images/");
+    let mut url = String::from("/dialekt-portfolio/assets/images/");
     url.push_str(&self.name);
     
     let img_c = "w-full mb-8 rounded";
