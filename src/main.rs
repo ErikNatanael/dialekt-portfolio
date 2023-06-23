@@ -4,6 +4,8 @@ mod bio;
 use bio::*;
 mod project;
 use project::*;
+mod portfolio;
+use portfolio::*;
 
 fn main() {
     mount_to_body(|cx| view! { cx, <App/> })
@@ -20,7 +22,7 @@ fn App(cx: Scope) -> impl IntoView {
             class="mx-auto"
             >
             <div
-             class="bg-emerald-950 flex flex-col md:flex-row h-screen margin-0 overflow-hidden text-white font-normal"
+             class="bg-emerald-950 flex flex-col md:flex-row h-screen margin-0 overflow-hidden text-white font-normal font-urbanist"
              >
           // all our routes will appear inside <main>
           <Routes>
@@ -33,10 +35,12 @@ fn App(cx: Scope) -> impl IntoView {
         <Route path="digital_luthier" view=|cx| view! { cx, <BioDigitalLuthier/> }/>
         <Route path="composer" view=|cx| view! { cx, <BioComposer/> }/>
         <Route path="" view=|cx| view! { cx,
-            <p>"Select a bio section to view more info."</p>
+                                         <img src="/assets/images/DSC01437_04_web.jpg"/>
+                                         // <img src="/assets/images/DSC01437_04_web_ascii.jpg" class="hover:visible"/>
           }/>
     </Route>
-    <Route path="/projects" view=|cx| view! { cx, <Projects/> }/>
+    <Route path="/projects" view=|cx| view! { cx, <ProjectOverview/> }/>
+    <Route path="/projects/:slug" view=|cx| view! { cx, <ProjectDispatcher/> }/>
     // <Route path="/users/:id" view=|cx| view! { cx, <UserProfile/> }/>
     <Route path="/*any" view=|cx| view! { cx, <NotFound/> }/>
           </Routes>
@@ -53,24 +57,35 @@ fn Home(cx: Scope) -> impl IntoView {
                 //     class="text-red-600 text-3xl"
                 // >
                 //     "Home"</h1>
-            <div
-             class=("basis-1/3 flex flex-col")
-             >
-            <MainNav/>
-            <HomeBio/>
-            </div>
-            <div
-             class=("basis-2/3")
-            >
-            <ProjectMasonry/>
-            </div>
+        <div class="w-full">
+            <Header />
+            <Portfolio />
+        </div>
 
     }
 }
 #[component]
-fn Projects(cx: Scope) -> impl IntoView {
+fn Portfolio(cx: Scope) -> impl IntoView {
     view! { cx,
             <h1>"Projects"</h1>
+    }
+}
+#[component]
+fn Header(cx: Scope) -> impl IntoView {
+    view! { cx,
+        <div
+        class="flex flex-row w-full"
+        >
+            <div class="basis-1/2">
+                <h1
+             class="text-5xl font-thin"
+             >"Erik Natanael"</h1>
+                <h1 class="text-5xl font-thin">"Gustafsson"</h1>
+            </div>
+            <div>
+                <h1 class="text-3xl font-thin">"Portfolio for the Dialekt open call application"</h1>
+            </div>
+        </div>
     }
 }
 #[component]
@@ -82,7 +97,7 @@ fn NotFound(cx: Scope) -> impl IntoView {
 
 #[component]
 fn HomeBio(cx: Scope) -> impl IntoView {
-    let bio_links = "hover:underline text-zinc-300 font-bold text-xl";
+    let bio_links = "hover:underline text-zinc-300 font-bold text-xl underline";
     view! { cx,
             <div
              class="flex flex-col h-full place-content-evenly font-urbanist m-8"
@@ -110,8 +125,9 @@ fn BioPage(cx: Scope) -> impl IntoView {
             // >
             //     "BioPage"</h1>
         <div
-         class=("basis-1/3")
+         class=("basis-1/3 flex flex-col")
          >
+            <MainNav/>
         <HomeBio/>
         </div>
         <div
@@ -360,11 +376,12 @@ Elit ut aliquam purus sit amet luctus. Ornare aenean euismod elementum nisi quis
 #[component]
 fn MainNav(cx: Scope) -> impl IntoView {
     view! { cx,
-            <div class="flex flex-row basis-0">
+            <div class="grid grid-flow-col auto-cols-max basis-0 mx-8 mt-4 place-content-center">
             <MainNavLink text="Home" url="/"/>
-            <MainNavLink text="Bio" url="/bio"/>
             <MainNavLink text="Projects" url="/projects"/>
             <MainNavLink text="Writing" url="/writing"/>
+            <MainNavLink text="Shop" url="/shop"/>
+            <MainNavLink text="About" url="/bio"/>
             </div>
     }
 }
@@ -373,10 +390,12 @@ fn MainNav(cx: Scope) -> impl IntoView {
 fn MainNavLink(cx: Scope, text: &'static str, url: &'static str) -> impl IntoView {
     view! { cx,
             <A href=url
-            class="m-3 p-2 w-full border border-white rounded-lg text-sm text-center opacity-30 hover:opacity-100"
+            class="flex-1 w-full border-white rounded-lg text-sm text-center  flex flex-row "
              >
             // <div >
-            {text}
+            <img class="h-full mr-2" src="/assets/images/menu_icon.svg"/>
+            <span class="opacity-30 hover:opacity-100">{text}</span>
+            <img class="h-full ml-2" src="/assets/images/menu_icon2.svg"/>
             // </div>
             </A>
     }

@@ -635,16 +635,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "fed44880c466736ef9a5c5b5facefb5ed0785676d0c02d612db14e54f0d84286"
 
 [[package]]
-name = "homesite-leptos"
-version = "0.1.0"
-dependencies = [
- "getrandom",
- "leptos",
- "leptos_router",
- "rand",
-]
-
-[[package]]
 name = "html-escape"
 version = "0.2.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1314,6 +1304,16 @@ name = "pkg-config"
 version = "0.3.27"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "26072860ba924cbfa98ea39c8c19b4dd6a4a25423dbdf219c1eca91aa0cf6964"
+
+[[package]]
+name = "portfolio-dialekt-leptos"
+version = "0.1.0"
+dependencies = [
+ "getrandom",
+ "leptos",
+ "leptos_router",
+ "rand",
+]
 
 [[package]]
 name = "ppv-lite86"
