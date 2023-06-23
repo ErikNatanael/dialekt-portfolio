@@ -277,6 +277,11 @@ function __wbg_get_imports() {
         const ret = getObject(arg0).createElement(v0);
         return addHeapObject(ret);
     }, arguments) };
+    imports.wbg.__wbg_createTextNode_30215f8ff2f87080 = function(arg0, arg1, arg2) {
+        var v0 = getCachedStringFromWasm0(arg1, arg2);
+        const ret = getObject(arg0).createTextNode(v0);
+        return addHeapObject(ret);
+    };
     imports.wbg.__wbg_createTreeWalker_1500148dc9c2c8fe = function() { return handleError(function (arg0, arg1, arg2) {
         const ret = getObject(arg0).createTreeWalker(getObject(arg1), arg2 >>> 0);
         return addHeapObject(ret);
@@ -427,7 +432,7 @@ async function __wbg_init(input) {
     if (wasm !== undefined) return wasm;
 
     if (typeof input === 'undefined') {
-        input = new URL('portfolio-dialekt-leptos-864683fbf34940f9_bg.wasm', import.meta.url);
+        input = new URL('portfolio-dialekt-leptos-c87cbb8ce115573d_bg.wasm', import.meta.url);
     }
     const imports = __wbg_get_imports();
 

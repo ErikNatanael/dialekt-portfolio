@@ -20,6 +20,7 @@ fn App(cx: Scope) -> impl IntoView {
             <div
              class="bg-emerald-1000 flex flex-col md:flex-row margin-0 text-white font-normal font-urbanist"
              >
+             <Home />
           // all our routes will appear inside <main>
     //       <Routes>
     //         /* ... */
