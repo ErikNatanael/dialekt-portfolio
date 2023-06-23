@@ -9,18 +9,13 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        poppins: ["Poppins", "sans-serif"],
         urbanist: ["Urbanist", "sans-serif"],
       },
-      keyframes: {
-        typing: {
-          "0%": { width: "0" },
-          "100%": { width: "100%" },
+      colors: {
+        emerald: {
+          1000: "#011A14"
         },
-      },
-      animation: {
-        typing: "typing 0.5s ",
-      },
+      }
     },
   },
   plugins: [],
